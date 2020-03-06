@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Uplift Desk Controller</string>
+    <string name="move_down">Move Down</string>
+    <string name="move_up">Move Up</string>
+    <string name="sitting">Sitting</string>
+    <string name="standing">Standing</string>
+    <string name="hold_button_to_move_the_desk">Hold Button to move the Desk</string>
+    <string name="_23_5">23.5</string>
+    <string name="current_height">Current Height</string>
+    <string name="desk_name">Desk Name</string>
+    <string name="ble_12345">BLE_12345</string>
+    <string name="send_the_desk_to_preset_1_or_preset_2">Send the desk to preset 1 or preset 2</string>
+    <string name="uplift_logo">Uplift Logo</string>
+</resources>
