@@ -64,6 +64,31 @@ class BluetoothHandler {
     private static final UUID TX_POWER_CHAR_UUID = UUID.fromString("0000ff09-0000-1000-8000-00805f9b34fb");
     private static final UUID MCU_DELAY_CHAR_UUID = UUID.fromString("0000ff0a-0000-1000-8000-00805f9b34fb");
     private static final UUID BAUNDRATE_CHAR_UUID = UUID.fromString("0000ff03-0000-1000-8000-00805f9b34fb");
+
+    // Desk up
+    private String desk_up = "f1f10100017e";
+
+    // Desk Down
+    private String desk_down = "f1f10200027e";
+
+    // Desk Stop
+    private String desk_stop = "f1f12b002b7e";
+
+    // Preset Save 1
+    private String preset_save1 = "f1f10300037e";
+
+    // Preset Save 2
+    private String preset_save2 = "f1f10400047e";
+
+    // Go to preset 1
+    private String go_preset1 = "f1f10500057e";
+
+    // Go to Preset 2
+    private String go_preset2 = "f1f10600067e";
+
+    // Desk Status
+    private String desk_status = "f1f10700077e";
+
     private static BluetoothHandler instance = null;
     // Local variables
     private BluetoothCentral central;
@@ -182,10 +207,9 @@ class BluetoothHandler {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = "F1F10600067E";
                 try {
-                    peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(s), WRITE_TYPE_NO_RESPONSE);
-                    peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(s), WRITE_TYPE_NO_RESPONSE);
+                    peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(go_preset2), WRITE_TYPE_NO_RESPONSE);
+                    peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(go_preset2), WRITE_TYPE_NO_RESPONSE);
                 } catch (DecoderException e) {
                     e.printStackTrace();
                 }
@@ -197,10 +221,9 @@ class BluetoothHandler {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = "F1F10500057E";
                 try {
-                    peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(s), WRITE_TYPE_NO_RESPONSE);
-                    peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(s), WRITE_TYPE_NO_RESPONSE);
+                    peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(go_preset1), WRITE_TYPE_NO_RESPONSE);
+                    peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(go_preset1), WRITE_TYPE_NO_RESPONSE);
                 } catch (DecoderException e) {
                     e.printStackTrace();
                 }
@@ -213,10 +236,9 @@ class BluetoothHandler {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    String s = "F1F10200027E";
                     try {
-                        peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(s), WRITE_TYPE_NO_RESPONSE);
-                        peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(s), WRITE_TYPE_NO_RESPONSE);
+                        peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(desk_down), WRITE_TYPE_NO_RESPONSE);
+                        peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(desk_down), WRITE_TYPE_NO_RESPONSE);
                     } catch (DecoderException e) {
                         e.printStackTrace();
                     }
@@ -233,10 +255,9 @@ class BluetoothHandler {
 
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        String s = "F1F10100017E";
                         try {
-                            peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(s), WRITE_TYPE_NO_RESPONSE);
-                            peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(s), WRITE_TYPE_NO_RESPONSE);
+                            peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(desk_up), WRITE_TYPE_NO_RESPONSE);
+                            peripheral_test.writeCharacteristic(write_line, Hex.decodeHex(desk_up), WRITE_TYPE_NO_RESPONSE);
                         } catch (DecoderException e) {
                             e.printStackTrace();
                         }
